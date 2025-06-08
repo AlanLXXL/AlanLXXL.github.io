@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Xing Lu"
   avatar : "/assets/images/alan-portrait.png"
-  bio    : "Xing Lu is a computer science student, passionate about software engineering, machine learning, and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
+  bio    : "Xing Lu is a computer science student, passionate about machine learning, and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
