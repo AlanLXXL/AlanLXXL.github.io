@@ -56,13 +56,13 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name   : "Xing Lu"
+  avatar : "/assets/images/alan-portrait.jpg"
+  bio    : "Xing Lu is a computer science student, passionate about software engineering, machine learning, and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://"
+      url: "https://alanlxxl.github.io/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/"
