@@ -1,3 +1,20 @@
+---
+title: "You Can’t Compare Apples to Bananas: Why Life Isn’t a Fair Benchmark"
+date: 2025-06-22
+last_modified_at: 2025-06-22T23:39:00+08:00
+categories:
+  - Blog
+tags:
+  - Computer Science
+  - Human Algorithm
+layout: single
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
+---
+
 # You Can’t Compare Apples to Bananas: Why Life Isn’t a Fair Benchmark
 
 [**Introduction:	2**](#introduction:)
