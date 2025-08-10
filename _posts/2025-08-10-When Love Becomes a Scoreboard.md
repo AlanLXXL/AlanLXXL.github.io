@@ -13,6 +13,7 @@ comments: true
 share: true
 related: true
 ---
+
 ## Growing up between sacrifice and expectation — and learning that worth isn’t measured in wins.
 
 The air inside the Go competition hall was heavy and still, thick with summer heat. The temperature outside was close to forty degrees, and yet my parents stayed there the whole day — no complaints, no rest — just to accompany my little brother in his game.
