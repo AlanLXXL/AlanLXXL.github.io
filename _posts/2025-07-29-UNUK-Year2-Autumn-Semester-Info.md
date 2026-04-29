@@ -12,6 +12,9 @@ read_time: true
 comments: true
 share: true
 related: true
+toc: true
+toc_sticky: true
+toc_label: "Contents"
 ---
 
 # UNUK Year 2 Computer Science Autumn Semester Info

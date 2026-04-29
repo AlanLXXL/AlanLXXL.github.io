@@ -12,6 +12,9 @@ read_time: true
 comments: true
 share: true
 related: true
+toc: true
+toc_sticky: true
+toc_label: "Contents"
 ---
 
 ## The Messy Truth: A Researcher's Guide to Why It's Hard and How to tackle it

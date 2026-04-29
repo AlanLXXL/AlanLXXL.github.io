@@ -14,6 +14,9 @@ read_time: true
 comments: true
 share: true
 related: true
+toc: true
+toc_sticky: true
+toc_label: "Contents"
 ---
 
 # Year 2 Computer Science at UNNC: What I Wish I Knew Sooner

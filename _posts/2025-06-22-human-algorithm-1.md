@@ -13,6 +13,9 @@ read_time: true
 comments: true
 share: true
 related: true
+toc: true
+toc_sticky: true
+toc_label: "Contents"
 ---
 
 # You Can’t Compare Apples to Bananas: Why Life Isn’t a Fair Benchmark

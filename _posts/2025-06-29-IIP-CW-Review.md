@@ -15,6 +15,9 @@ read_time: true
 comments: true
 share: true
 related: true
+toc: true
+toc_sticky: true
+toc_label: "Contents"
 ---
 
 # Why I Struggled with the Introduction to Image Processing Coursework: A Reflection on Unexpectedly Low Marks

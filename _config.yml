@@ -17,9 +17,8 @@ title: Xing Lu
 email: xl16alan@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal blog by Xing LU — sharing thoughts on computer science, learning, travel, and life.
-twitter_username: AlanLXXL
 github_username: AlanLXXL
-minimal_mistakes_skin: default
+minimal_mistakes_skin: air
 search: true
 
 # Build settings
@@ -60,30 +59,21 @@ author:
   avatar : "/assets/images/alan-portrait.png"
   bio    : "Xing Lu is a computer science student, passionate about machine learning, and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://alanlxxl.github.io/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/AlanLXXL"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/xing-lu-7420a72a6"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/AlanLXXL"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/xing-lu-7420a72a6"
 
 defaults:
   # _posts
