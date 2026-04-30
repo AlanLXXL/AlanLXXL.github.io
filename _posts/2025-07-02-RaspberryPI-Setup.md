@@ -1,12 +1,14 @@
 ---
-title: "Setting Up Raspberry Pi Nexmon in China with AI: Lessons Learned from a DIY Journey"
+title: "Setting Up Raspberry Pi in China with AI: Lessons Learned from a DIY Journey"
 date: 2025-07-02
 last_modified_at: 2025-07-02T23:59:00+08:00
 categories:
   - Blog
 tags:
   - Raspberry Pi
-  - Nexmon
+  - AI tools
+excerpt: "Setting up a Raspberry Pi in China with Gemini 2.5 Pro and ChatGPT-4o as co-pilots — and one lesson worth keeping: slow is fast."
+toc: true
 layout: single
 author_profile: true
 read_time: true
@@ -15,27 +17,14 @@ share: true
 related: true
 ---
 
-
-# Setting Up Raspberry Pi Nexmon in China with AI: Lessons Learned from a DIY Journey
-
-[**🛠 My Raspberry Pi Setup Workflow	1**](#🛠-my-raspberry-pi-setup-workflow)
-
-[1\. Choosing the Right Tools	1](#1.-choosing-the-right-tools)
-
-[2\. Debugging with AI: Input Matters	1](#2.-debugging-with-ai:-input-matters)
-
-[3\. The Core Lesson: Slow is Fast	2](#3.-the-core-lesson:-slow-is-fast)
-
-[**💬 Final Thoughts	2**](#💬-final-thoughts)
-
 **📍 Introduction:**  
  Recently, I set up a Raspberry Pi by myself while in China. It was a meaningful experience not only because I successfully configured the device, but also because I explored how AI tools like **Gemini 2.5 Pro** and **ChatGPT-4o** could assist me along the way. In this post, I’ll share how I approached the process, the tools I used, and one key lesson I took away: **slow is fast**.
 
 ---
 
-### **🛠 My Raspberry Pi Setup Workflow** {#🛠-my-raspberry-pi-setup-workflow}
+### **🛠 My Raspberry Pi Setup Workflow**
 
-#### **1\. Choosing the Right Tools** {#1.-choosing-the-right-tools}
+#### **1. Choosing the Right Tools**
 
 There are countless tutorials and forums online, but I found that combining **AI tools** with **community resources** gave me the best of both worlds. Specifically:
 
@@ -47,7 +36,7 @@ This dual approach helped me avoid frustration and confusion.
 
 ---
 
-#### **2\. Debugging with AI: Input Matters** {#2.-debugging-with-ai:-input-matters}
+#### **2. Debugging with AI: Input Matters**
 
 When the Raspberry Pi didn’t boot properly, I learned the importance of **retrieving log information**. Getting the error messages or boot logs was key.  
  Once I had the logs, I could input them into the AI tools and receive relevant explanations and possible fixes. This felt like having a virtual debugger at my fingertips.
@@ -56,7 +45,7 @@ When the Raspberry Pi didn’t boot properly, I learned the importance of **retr
 
 ---
 
-#### **3\. The Core Lesson: Slow is Fast** {#3.-the-core-lesson:-slow-is-fast}
+#### **3. The Core Lesson: Slow is Fast**
 
 At first, I made a common mistake: I copied and pasted the commands from AI without fully understanding them. Some worked, others didn’t.  
  But then I paused and took a different approach:
@@ -74,7 +63,7 @@ This process took more time—but in the end, it saved me from going down the wr
 
 ---
 
-### **💬 Final Thoughts** {#💬-final-thoughts}
+### **💬 Final Thoughts**
 
 Setting up Raspberry Pi in China came with its own challenges, including limited access to certain resources. But with a smart combination of AI tools and careful troubleshooting, the process became manageable and even enjoyable.
 

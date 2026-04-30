@@ -5,10 +5,9 @@ last_modified_at: 2025-06-08T23:59:00+08:00
 categories:
   - Blog
 tags:
-  - 华语音乐
   - 单依纯
   - 音乐评论
-  - 李白
+excerpt: "对单依纯改编《李白》的争议演绎做一次一分为二的评论：从'对原作精神的背离'到'结构上的情绪释放'，看一次充满张力的艺术冒险。"
 layout: single
 author_profile: true
 read_time: true

@@ -1,11 +1,13 @@
 ---
 title: "The Messy Truth: A Researcher's Guide to Why It's Hard and How to tackle it"
-date: 2025-08-26
-last_modified_at: 2025-08-26T23:59:00+08:00
+date: 2025-09-25
+last_modified_at: 2025-09-25T23:59:00+08:00
 categories:
   - Blog
 tags:
   - Research
+  - Reflection
+excerpt: "Research isn't a 'Eureka!' moment — it's a gruelling process of dead ends, failure, and self-doubt. Here's why it's hard, and a small toolkit (slow is fast, less is more, 80/20) for getting through it."
 layout: single
 author_profile: true
 read_time: true

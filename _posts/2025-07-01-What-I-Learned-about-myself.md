@@ -6,6 +6,8 @@ categories:
   - Blog
 tags:
   - Reflection
+  - Personal
+excerpt: "On my dad's 50th birthday, he asked why I still don't have a girlfriend. This is what I've been quietly learning about myself through four years abroad."
 layout: single
 author_profile: true
 read_time: true

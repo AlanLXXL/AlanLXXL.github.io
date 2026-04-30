@@ -5,7 +5,9 @@ last_modified_at: 2025-08-10T23:59:00+08:00
 categories:
   - Blog
 tags:
-  - Personal Feeling
+  - Reflection
+  - Personal
+excerpt: "Watching my parents accompany my little brother to a Go competition — and hearing the same words I once heard. A reflection on conditional love, sacrifice, and learning that worth isn't measured in wins."
 layout: single
 author_profile: true
 read_time: true
