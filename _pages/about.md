@@ -1,14 +1,16 @@
 ---
 permalink: /about/
 title: "About"
-header:
-  image: /assets/images/xing-portrait-profile.png
-  image_description: "Artistic double-exposure portrait of Xing Lu with Carnegie Mellon University campus and ECE circuit motifs."
 ---
 
 **Currently:** Final-year Computer Science student at the University of Nottingham.<br>
 **Next:** Master's in Electrical &amp; Computer Engineering at Carnegie Mellon University (Fall 2026).
 {: .notice--primary}
+
+<img src="/assets/images/xing-portrait-profile.png"
+     alt="Artistic side-profile portrait of Xing Lu with Carnegie Mellon University campus and ECE circuit motifs"
+     class="align-right"
+     style="width: 320px; max-width: 40%; margin: 0 0 1em 1.5em; border-radius: 6px;" />
 
 Hi! I'm Xing Lu, a Computer Science student at the University of Nottingham with a strong passion for machine learning and its applications in real-world systems. My current research interests include hyper-heuristics and IoT-based sensing technologies, where I enjoy exploring how smart systems can adapt and learn to make better decisions.
 
