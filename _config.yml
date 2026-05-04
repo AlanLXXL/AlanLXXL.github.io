@@ -75,6 +75,9 @@ footer:
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/xing-lu-7420a72a6"
 
+atom_feed:
+  hide: true
+
 defaults:
   # _posts
   - scope:
