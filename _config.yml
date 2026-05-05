@@ -33,6 +33,11 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
 
+collections:
+  tutorials:
+    output: true
+    permalink: /tutorials/:name/
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -97,6 +102,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _tutorials
+  - scope:
+      path: ""
+      type: tutorials
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      toc: true
+      toc_sticky: true
 
 category_archive:
   type: liquid
