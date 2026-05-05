@@ -2,3 +2,9 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/alan-portrait.png' | relative_url }}">
 <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/alan-portrait.png' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/images/alan-portrait.png' | relative_url }}">
+
+{% if page.url == "/" %}
+<script>
+  document.title = "Xing LU's Blog | About";
+</script>
+{% endif %}
