@@ -47,7 +47,7 @@ The actual site-building logic. Declared in the `Gemfile` (`github-pages`, `jeky
 |---|---|
 | Homebrew installed | ✅ |
 | `ruby@3.1` installed via brew | ✅ |
-| PATH + locale wired in `~/.zprofile` | ⚠️ verify — run `which ruby`; expect `/opt/homebrew/opt/ruby@3.1/bin/ruby` |
+| PATH + locale wired in `~/.zprofile` | ⚠️ verify in a **new terminal** — `which ruby` should say `/opt/homebrew/opt/ruby@3.1/bin/ruby`. If it says `/usr/bin/ruby`, open `~/.zprofile` and confirm the line reads `ruby@3.1/bin` (not `ruby/bin` — the unversioned path silently disappears from PATH because that directory doesn't exist on this machine). |
 | `bundle config set path vendor/bundle` | ✅ (see `.bundle/config`) |
 | `bundle install` | ✅ (see `vendor/bundle/`) |
 
@@ -143,7 +143,7 @@ The live URL: https://alanlxxl.github.io/
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `Could not find 'bundler' (X.Y.Z)` | Wrong Ruby active (system 2.6 instead of brew 3.1) | `export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"` and try again |
+| `Could not find 'bundler' (X.Y.Z)` | Wrong Ruby active (system 2.6 instead of brew 3.1) | **Diagnose:** `which ruby` — if it's `/usr/bin/ruby`, PATH is wrong. **Quick fix (this terminal only):** `export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"`. **Permanent fix:** open `~/.zprofile`, make sure the Ruby line says `opt/ruby@3.1/bin` (not `opt/ruby/bin`), then `source ~/.zprofile` or open a new terminal. |
 | `Invalid US-ASCII character "\xE2"` | UTF-8 locale not set | `export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8` |
 | `cannot load such file -- csv` (or similar stdlib gem) | Ruby is too new (3.4+) | Make sure `ruby@3.1` is what `which ruby` returns |
 | Port 4000 already in use | A previous `jekyll serve` is still running | `lsof -ti:4000 \| xargs kill` or `bundle exec jekyll serve --port 4001` |
