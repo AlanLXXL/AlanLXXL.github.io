@@ -6,6 +6,28 @@ Personal quick-reference for working on the site. For the full first-time-setup 
 
 ## TL;DR — start the server
 
+**Daily workflow on this Mac** (PATH + locale are wired permanently into `~/.zshrc`):
+
+```bash
+cd ~/Desktop/MyBlogPage/AlanLXXL.github.io
+bundle exec jekyll serve --livereload
+```
+
+Then open **http://127.0.0.1:4000**. Save any file → browser auto-refreshes. `Ctrl+C` to stop.
+
+### When the short version works (and when it doesn't)
+
+| Condition | Works? |
+|---|---|
+| New iTerm tab + `cd` into project + `bundle exec…` | ✅ Yes |
+| Same tab that was open *before* PATH was fixed | ❌ Run `source ~/.zshrc`, or open a fresh tab |
+| Forgot to `cd` into the project | ❌ Bundler can't find the Gemfile |
+| New Mac / fresh install | ❌ Redo one-time setup in [`_tutorials/jekyll-local-preview.md`](_tutorials/jekyll-local-preview.md) |
+
+### Bulletproof fallback
+
+If anything looks off and you don't want to debug, run this 5-line block — it works regardless of shell state because the env vars are set in the same shell as the server:
+
 ```bash
 cd ~/Desktop/MyBlogPage/AlanLXXL.github.io
 export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
@@ -13,12 +35,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 bundle exec jekyll serve --livereload
 ```
-
-Then open **http://127.0.0.1:4000**. Save any file → browser auto-refreshes.
-
-`Ctrl+C` to stop.
-
-> The three `export` lines are only needed if they're not already in `~/.zprofile`. If you ran step 3 of the Jekyll tutorial, they're permanent and you can skip straight to `bundle exec jekyll serve --livereload`.
 
 ---
 
@@ -47,7 +63,7 @@ The actual site-building logic. Declared in the `Gemfile` (`github-pages`, `jeky
 |---|---|
 | Homebrew installed | ✅ |
 | `ruby@3.1` installed via brew | ✅ |
-| PATH + locale wired in `~/.zprofile` | ⚠️ verify in a **new terminal** — `which ruby` should say `/opt/homebrew/opt/ruby@3.1/bin/ruby`. If it says `/usr/bin/ruby`, open `~/.zprofile` and confirm the line reads `ruby@3.1/bin` (not `ruby/bin` — the unversioned path silently disappears from PATH because that directory doesn't exist on this machine). |
+| PATH + locale wired in `~/.zprofile` **and** `~/.zshrc` | ⚠️ verify in a **new terminal** — `which ruby` should say `/opt/homebrew/opt/ruby@3.1/bin/ruby`. If it says `/usr/bin/ruby`, the exports got wiped. On this machine they must live in `.zshrc` (not just `.zprofile`) because `.zshrc` line 2 does a destructive `export PATH=<hardcoded list>` with no `:$PATH` on the end — it overwrites whatever `.zprofile` set. The Ruby exports go at the **end** of `.zshrc` so nothing earlier can clobber them. |
 | `bundle config set path vendor/bundle` | ✅ (see `.bundle/config`) |
 | `bundle install` | ✅ (see `vendor/bundle/`) |
 
