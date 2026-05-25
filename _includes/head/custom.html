@@ -8,3 +8,109 @@
   document.title = "Xing LU's Blog | About";
 </script>
 {% endif %}
+
+<style>
+  /* Series card on /tutorials/ */
+  .series-card {
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #2f7fc1;
+    border-radius: 6px;
+    padding: 1.25em 1.5em;
+    margin-bottom: 1.5em;
+    background: #fafbfc;
+  }
+  .series-card__eyebrow {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    color: #2f7fc1;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+  }
+  .series-card__title { margin: 0 0 0.4em 0; font-size: 1.35em; }
+  .series-card__title a { text-decoration: none; }
+  .series-card__title a:hover { text-decoration: underline; }
+  .series-card__excerpt { margin: 0.4em 0 0.6em 0; color: #4b5563; }
+  .series-card__meta { font-size: 0.85em; color: #6b7280; margin: 0; }
+  .series-card__meta strong { color: #374151; }
+
+  /* Series landing — parts list */
+  .series-parts { margin-top: 2.5em; }
+  .series-parts__list { list-style: none; padding-left: 0; counter-reset: part; }
+  .series-parts__item {
+    counter-increment: part;
+    position: relative;
+    padding: 1em 0 1em 3em;
+    border-bottom: 1px solid #eef0f2;
+  }
+  .series-parts__item:last-child { border-bottom: none; }
+  .series-parts__item::before {
+    content: counter(part);
+    position: absolute;
+    left: 0;
+    top: 1.05em;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    background: #2f7fc1;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+  .series-parts__title { margin: 0 0 0.3em 0; font-size: 1.15em; }
+  .series-parts__title a { text-decoration: none; }
+  .series-parts__title a:hover { text-decoration: underline; }
+  .series-parts__excerpt { margin: 0.2em 0 0.4em 0; color: #4b5563; }
+  .series-parts__meta { margin: 0; color: #6b7280; }
+
+  /* Prev/Next nav on a series part */
+  .series-nav {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.9em 1.1em;
+    margin: 1.5em 0;
+    background: #fafbfc;
+  }
+  .series-nav--top { margin-top: 0; margin-bottom: 2em; }
+  .series-nav--bottom { margin-top: 2.5em; }
+  .series-nav__header { font-size: 0.9em; margin-bottom: 0.6em; }
+  .series-nav__eyebrow {
+    text-transform: uppercase;
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    color: #2f7fc1;
+    font-weight: 600;
+    margin-right: 0.5em;
+  }
+  .series-nav__title { font-weight: 600; }
+  .series-nav__position { color: #6b7280; }
+  .series-nav__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6em;
+  }
+  .series-nav__link {
+    display: flex;
+    flex-direction: column;
+    padding: 0.55em 0.8em;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: white;
+    text-decoration: none;
+    color: inherit;
+    min-height: 2.6em;
+  }
+  .series-nav__link:hover { border-color: #2f7fc1; }
+  .series-nav__link--next { text-align: right; align-items: flex-end; }
+  .series-nav__link--placeholder { background: transparent; border: 1px dashed transparent; }
+  .series-nav__link-direction {
+    font-size: 0.75em;
+    color: #2f7fc1;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .series-nav__link-title { font-size: 0.95em; }
+</style>

@@ -37,6 +37,9 @@ collections:
   tutorials:
     output: true
     permalink: /tutorials/:name/
+  series:
+    output: true
+    permalink: /tutorials/series/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -107,13 +110,24 @@ defaults:
       path: ""
       type: tutorials
     values:
-      layout: single
+      layout: tutorial
       author_profile: true
       read_time: true
       comments: true
       share: true
       toc: true
       toc_sticky: true
+  # _series
+  - scope:
+      path: ""
+      type: series
+    values:
+      layout: series
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      toc: false
 
 category_archive:
   type: liquid

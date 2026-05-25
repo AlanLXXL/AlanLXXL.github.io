@@ -1,0 +1,59 @@
+{%- comment -%}
+  Renders series context + Prev/Next links on a tutorial that belongs to a series.
+  Expects page.series (slug matching a file in _series/) and page.order (1-based integer).
+  Usage: {% include series-nav.html position="top" %}  or position="bottom"
+{%- endcomment -%}
+
+{%- if page.series -%}
+  {%- assign current_series = site.series | where: "slug", page.series | first -%}
+  {%- assign series_parts = site.tutorials | where: "series", page.series | sort: "order" -%}
+  {%- assign total_parts = series_parts.size -%}
+
+  {%- comment -%} Find current index in the sorted parts list {%- endcomment -%}
+  {%- assign current_index = -1 -%}
+  {%- for part in series_parts -%}
+    {%- if part.url == page.url -%}
+      {%- assign current_index = forloop.index0 -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign prev_index = current_index | minus: 1 -%}
+  {%- assign next_index = current_index | plus: 1 -%}
+
+<aside class="series-nav series-nav--{{ include.position | default: 'top' }}" aria-label="Series navigation">
+  <div class="series-nav__header">
+    <span class="series-nav__eyebrow">Series</span>
+    {% if current_series %}
+      <a class="series-nav__title" href="{{ current_series.url | relative_url }}">{{ current_series.title }}</a>
+    {% else %}
+      <span class="series-nav__title">{{ page.series }}</span>
+    {% endif %}
+    {% if page.order and total_parts > 0 %}
+      <span class="series-nav__position">&middot; Part {{ page.order }} of {{ total_parts }}</span>
+    {% endif %}
+  </div>
+
+  <nav class="series-nav__links">
+    {% if prev_index >= 0 %}
+      {% assign prev_part = series_parts[prev_index] %}
+      <a class="series-nav__link series-nav__link--prev" href="{{ prev_part.url | relative_url }}">
+        <span class="series-nav__link-direction">&larr; Previous</span>
+        <span class="series-nav__link-title">{{ prev_part.title }}</span>
+      </a>
+    {% else %}
+      <span class="series-nav__link series-nav__link--placeholder"></span>
+    {% endif %}
+
+    {% if next_index < total_parts %}
+      {% assign next_part = series_parts[next_index] %}
+      <a class="series-nav__link series-nav__link--next" href="{{ next_part.url | relative_url }}">
+        <span class="series-nav__link-direction">Next &rarr;</span>
+        <span class="series-nav__link-title">{{ next_part.title }}</span>
+      </a>
+    {% else %}
+      <span class="series-nav__link series-nav__link--placeholder"></span>
+    {% endif %}
+  </nav>
+</aside>
+{%- endif -%}

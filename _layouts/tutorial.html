@@ -1,0 +1,13 @@
+---
+layout: single
+---
+
+{% if page.series %}
+  {% include series-nav.html position="top" %}
+{% endif %}
+
+{{ content }}
+
+{% if page.series %}
+  {% include series-nav.html position="bottom" %}
+{% endif %}

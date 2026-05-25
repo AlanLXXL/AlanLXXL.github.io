@@ -1,0 +1,35 @@
+---
+layout: single
+classes: wide
+---
+
+{{ content }}
+
+{%- assign series_slug = page.slug | default: page.name | replace: ".md", "" -%}
+{%- assign parts = site.tutorials | where: "series", series_slug | sort: "order" -%}
+
+<section class="series-parts">
+  <h2 id="parts-in-this-series">Parts in this series</h2>
+
+  {% if parts.size == 0 %}
+  <p><em>No parts published yet — check back soon.</em></p>
+  {% else %}
+  <ol class="series-parts__list">
+    {% for part in parts %}
+    <li class="series-parts__item">
+      <h3 class="series-parts__title">
+        <a href="{{ part.url | relative_url }}">{{ part.title }}</a>
+      </h3>
+      {% if part.excerpt %}
+      <p class="series-parts__excerpt">{{ part.excerpt | markdownify | strip_html | truncate: 220 }}</p>
+      {% endif %}
+      <p class="series-parts__meta">
+        {% if part.difficulty %}<small>{{ part.difficulty }}</small>{% endif %}
+        {% if part.time %}<small> &middot; ~{{ part.time }}</small>{% endif %}
+        {% if part.last_tested %}<small> &middot; <em>Last tested: {{ part.last_tested | date: "%B %Y" }}</em></small>{% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+</section>
