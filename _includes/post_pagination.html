@@ -1,0 +1,23 @@
+{%- comment -%}
+Local override of the theme include. Project pages carry their own prev/next
+navigation ordered by `order` (see _layouts/project.html), so the theme pager,
+which follows filename order, is suppressed for the projects collection.
+Everything else is the upstream include, unchanged.
+{%- endcomment -%}
+{%- if page.collection != "projects" -%}
+{% assign locale = include.locale | default: site.locale %}
+{% if page.previous or page.next %}
+  <nav class="pagination" aria-label="Post pagination">
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html | strip}}">{{ site.data.ui-text[locale].pagination_previous | default: "Previous" }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[locale].pagination_previous | default: "Previous" }}</a>
+    {% endif %}
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html | strip}}">{{ site.data.ui-text[locale].pagination_next | default: "Next" }}</a>
+    {% else %}
+      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[locale].pagination_next | default: "Next" }}</a>
+    {% endif %}
+  </nav>
+{% endif %}
+{%- endif -%}

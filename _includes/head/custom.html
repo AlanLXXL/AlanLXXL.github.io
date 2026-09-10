@@ -191,4 +191,316 @@
 
   /* "Selected projects" teaser on the homepage */
   .home-projects { margin-top: 2.5em; }
+
+  /* "At a glance" block on a project page: stat tiles + highlight cards */
+  .project-glance { margin: 0 0 2.5em 0; }
+  .project-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75em;
+    margin: 0 0 1em 0;
+  }
+  .project-stat {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.9em 0.8em 0.85em;
+    background: white;
+    text-align: center;
+  }
+  .project-stat__value {
+    font-size: 2.1em;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #2f7fc1;
+  }
+  .project-stat__label {
+    font-weight: 600;
+    color: #111827;
+    font-size: 0.9em;
+    margin-top: 0.25em;
+  }
+  .project-stat__note {
+    color: #6b7280;
+    font-size: 0.78em;
+    line-height: 1.35;
+    margin-top: 0.3em;
+  }
+  .project-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75em;
+  }
+  .project-highlight {
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #2f7fc1;
+    border-radius: 6px;
+    padding: 0.9em 1em 1em;
+    background: #fafbfc;
+  }
+  .project-highlight__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin: 0 0 0.4em 0;
+  }
+  .project-highlight__num {
+    flex: 0 0 auto;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    margin-top: 0.15em;
+    text-align: center;
+    border-radius: 50%;
+    background: #2f7fc1;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8em;
+  }
+  .project-highlight__title {
+    font-weight: 700;
+    font-size: 1em;
+    color: #111827;
+    line-height: 1.3;
+  }
+  @media (max-width: 600px) {
+    .project-highlights { grid-template-columns: 1fr; }
+  }
+  .page__content .project-highlight__text p {
+    margin: 0;
+    font-size: 0.88em;
+    line-height: 1.5;
+    color: #4b5563;
+  }
+
+  /* Architecture diagram: stacked layers with flow labels between them */
+  .arch { margin: 1.25em 0 1.5em 0; font-size: 0.9em; }
+  .arch__layer {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.8em 0.9em 0.9em;
+    background: white;
+  }
+  .arch__layer--accent { background: #f2f7fc; border-color: #c9ddef; }
+  .arch__layer-label {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    color: #2f7fc1;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+  }
+  .arch__boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.6em;
+  }
+  .arch__box {
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0.55em 0.7em 0.6em;
+    background: #fafbfc;
+  }
+  .arch__layer--accent .arch__box { background: white; }
+  .arch__box strong { display: block; font-size: 0.95em; color: #111827; }
+  .arch__box span {
+    display: block;
+    font-size: 0.82em;
+    line-height: 1.4;
+    color: #6b7280;
+    margin-top: 0.15em;
+  }
+  .arch__box code { font-size: 0.95em; }
+  .arch__flow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3em 2.5em;
+    padding: 0.5em 0;
+    font-size: 0.82em;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  /* CI/CD pipeline strip: numbered steps that wrap on narrow screens */
+  .page__content .pipeline {
+    list-style: none;
+    padding: 0;
+    margin: 1.25em 0 1.5em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    counter-reset: step;
+  }
+  .page__content .pipeline__step {
+    flex: 1 1 180px;
+    position: relative;
+    margin: 0;
+    padding: 0.7em 0.8em 0.7em 2.6em;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.88em;
+  }
+  .pipeline__step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0.75em;
+    top: 0.8em;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.4em;
+    text-align: center;
+    border-radius: 50%;
+    background: #e8f1f9;
+    color: #1f5f93;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  .pipeline__step--end { border-color: #2f7fc1; background: #f2f7fc; }
+  .pipeline__step--end::before { background: #2f7fc1; color: white; }
+  .pipeline__step strong { display: block; color: #111827; }
+  .pipeline__step span {
+    display: block;
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: #6b7280;
+    word-break: break-word;
+  }
+
+  /* Ranking dot plot: one row per algorithm, a dot at its average rank (1 = best, on the left) */
+  .dotplot {
+    margin: 1.25em 0 1.5em 0;
+    padding: 0.9em 1.1em 0.6em;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.88em;
+  }
+  .dotplot__title {
+    font-weight: 600;
+    color: #111827;
+    font-size: 0.95em;
+    line-height: 1.35;
+    margin-bottom: 0.7em;
+  }
+  .dotplot__row,
+  .dotplot__axis {
+    display: grid;
+    grid-template-columns: minmax(110px, 40%) 1fr 3em;
+    align-items: center;
+    gap: 0 0.9em;
+  }
+  /* --dual: two dots per row (filled and hollow) joined by a link, two value columns */
+  .dotplot--dual .dotplot__row,
+  .dotplot--dual .dotplot__axis,
+  .dotplot__head { grid-template-columns: minmax(110px, 34%) 1fr 3em 3em; }
+  .dotplot__head {
+    display: grid;
+    align-items: end;
+    gap: 0 0.9em;
+    margin-bottom: 0.3em;
+    font-size: 0.8em;
+    color: #6b7280;
+    white-space: nowrap;
+  }
+  .dotplot__head span:nth-child(n+3) { text-align: right; }
+  .dotplot__key {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-right: 0.3em;
+    border-radius: 50%;
+    background: #6b7280;
+  }
+  .dotplot__key--hollow { background: white; border: 2px solid #6b7280; box-sizing: border-box; }
+  .dotplot__link {
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    margin-top: -1px;
+    background: #d1d5db;
+  }
+  .dotplot__row--accent .dotplot__link { background: #9cc3e5; }
+  .dotplot__row { padding: 0.32em 0; }
+  .dotplot__label { color: #4b5563; line-height: 1.3; }
+  .dotplot__row--accent .dotplot__label { color: #111827; font-weight: 600; }
+  .dotplot__track { position: relative; height: 1.2em; }
+  .dotplot__track::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid #e5e7eb;
+  }
+  .dotplot__dot {
+    position: absolute;
+    top: 50%;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background: #9ca3af;
+    transform: translate(-50%, -50%);
+  }
+  .dotplot__row--accent .dotplot__dot {
+    width: 1em;
+    height: 1em;
+    background: #2f7fc1;
+    box-shadow: 0 0 0 3px #e8f1f9;
+  }
+  .dotplot__dot--hollow { background: white; border: 2px solid #9ca3af; box-sizing: border-box; }
+  .dotplot__row--accent .dotplot__dot--hollow { background: white; border-color: #2f7fc1; box-shadow: none; }
+  .dotplot__value {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: #4b5563;
+  }
+  .dotplot__row--accent .dotplot__value { color: #2f7fc1; font-weight: 700; }
+  .dotplot__value--alt { color: #6b7280; }
+  .dotplot__row--accent .dotplot__value--alt { color: #2f7fc1; font-weight: 600; }
+  .dotplot__axis { margin-top: 0.25em; color: #9ca3af; font-size: 0.8em; }
+  .dotplot__ticks { position: relative; height: 1.4em; }
+  .dotplot__ticks span {
+    position: absolute;
+    top: 0.2em;
+    transform: translateX(-50%);
+  }
+  .dotplot__ticks span::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -0.45em;
+    height: 0.35em;
+    border-left: 1px solid #d1d5db;
+  }
+  .page__content .dotplot__note {
+    margin: -0.9em 0 1.5em 0;
+    font-size: 0.85em;
+    line-height: 1.45;
+    color: #6b7280;
+  }
+  /* Narrow screens: label on its own line above the track */
+  @media (max-width: 600px) {
+    .dotplot__row { grid-template-columns: 1fr 3em; padding: 0.45em 0 0.35em; }
+    .dotplot--dual .dotplot__row { grid-template-columns: 1fr 3em 3em; }
+    .dotplot__row .dotplot__label { grid-column: 1 / -1; margin-bottom: 0.2em; }
+    .dotplot__axis { grid-template-columns: 1fr 3em; }
+    .dotplot--dual .dotplot__axis { grid-template-columns: 1fr 3em 3em; }
+    .dotplot__axis .dotplot__label { display: none; }
+    .dotplot__head { grid-template-columns: 1fr 3em 3em; }
+    .dotplot__head span:first-child { display: none; }
+  }
+
+  /* Dot-plot legend: lay the two key labels out as a right-aligned row so
+     "MAX-SAT" and "Knapsack" never share the 3em value columns. Placed last
+     so it wins over the grid rules above, including the mobile ones. */
+  .dotplot__head {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.1em;
+    grid-template-columns: none;
+  }
+  .dotplot__head span:empty { display: none; }
+  .dotplot__head span { white-space: nowrap; }
 </style>

@@ -19,6 +19,61 @@ layout: single
 {%- endif %}
 </div>
 
+{%- if pr.stats or pr.highlights %}
+<section class="project-glance">
+  <h2 id="at-a-glance">At a glance</h2>
+{%- if pr.stats %}
+  <div class="project-stats">
+{%- for s in pr.stats %}
+    <div class="project-stat">
+      <div class="project-stat__value">{{ s.value }}</div>
+      <div class="project-stat__label">{{ s.label }}</div>
+      {%- if s.note %}<div class="project-stat__note">{{ s.note }}</div>{% endif %}
+    </div>
+{%- endfor %}
+  </div>
+{%- endif %}
+{%- if pr.highlights %}
+  <div class="project-highlights">
+{%- for h in pr.highlights %}
+    <div class="project-highlight">
+      <div class="project-highlight__head">
+        <div class="project-highlight__num">{{ forloop.index }}</div>
+        <div class="project-highlight__title">{{ h.title }}</div>
+      </div>
+      <div class="project-highlight__text">{{ h.text | markdownify }}</div>
+    </div>
+{%- endfor %}
+  </div>
+{%- endif %}
+</section>
+{%- endif %}
+
 {{ content }}
 
 <p class="project-back"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>
+
+{%- comment -%} Previous / next project, in `order`, so a reader can walk the projects in sequence. Reuses the series-nav styles. {%- endcomment -%}
+{%- assign all_projects = site.projects | sort: "order" -%}
+{%- assign this_index = -1 -%}
+{%- for p in all_projects -%}{%- if p.url == page.url -%}{%- assign this_index = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- if this_index > -1 and all_projects.size > 1 -%}
+{%- assign prev_index = this_index | minus: 1 -%}
+{%- assign next_index = this_index | plus: 1 -%}
+{%- assign human_index = this_index | plus: 1 -%}
+<nav class="series-nav series-nav--bottom project-nav" aria-label="Other projects">
+  <div class="series-nav__header"><span class="series-nav__eyebrow">Projects</span><span class="series-nav__position">{{ human_index }} of {{ all_projects.size }}</span></div>
+  <div class="series-nav__links">
+{%- if this_index > 0 -%}{%- assign prev_project = all_projects[prev_index] %}
+    <a class="series-nav__link series-nav__link--prev" href="{{ prev_project.url | relative_url }}"><span class="series-nav__link-direction">&larr; Previous</span><span class="series-nav__link-title">{{ prev_project.title }}</span></a>
+{%- else %}
+    <span class="series-nav__link series-nav__link--placeholder"></span>
+{%- endif %}
+{%- if next_index < all_projects.size -%}{%- assign next_project = all_projects[next_index] %}
+    <a class="series-nav__link series-nav__link--next" href="{{ next_project.url | relative_url }}"><span class="series-nav__link-direction">Next &rarr;</span><span class="series-nav__link-title">{{ next_project.title }}</span></a>
+{%- else %}
+    <span class="series-nav__link series-nav__link--placeholder"></span>
+{%- endif %}
+  </div>
+</nav>
+{%- endif -%}

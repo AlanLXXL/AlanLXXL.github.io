@@ -138,8 +138,9 @@ Projects live in the `_projects/` collection. Each one gets its own page at `/pr
    # image: /assets/images/projects/<slug>.png   # optional card thumbnail
    ---
    ```
-3. Write the body: Problem → What I built → Results → What I learned. Headings feed the sticky table of contents.
-4. Save → livereload picks it up. Cards sort by `order`, lowest first.
+3. Optionally add an **At a glance** block: a `stats:` list (up to four `{value, label, note}` tiles) and a `highlights:` list (two or three `{title, text}` cards). Both are rendered above the body by the layout; see [`_projects/realtime-chat.md`](_projects/realtime-chat.md) for a filled-in example.
+4. Write the body: Problem → What I built → Results → What I learned. Headings feed the sticky table of contents. Three reusable HTML blocks are styled for project bodies: an architecture diagram (`<div class="arch">`) and a CI/CD pipeline strip (`<ol class="pipeline">`), both in `_projects/realtime-chat.md`, and a ranking dot plot (`<div class="dotplot">`, or `dotplot dotplot--dual` for two dots per row) in `_projects/learning-guided-search.md`. Plain `<figure>` + `<img>` + `<figcaption>` is styled by the theme. Images for a project go in `assets/images/projects/<slug>/` (downsize wide figures to about 1800 px with `sips --resampleWidth 1800 in.png --out out.png`) and PDFs in `assets/files/`.
+5. Save → livereload picks it up. Cards sort by `order`, lowest first.
 
 The card markup lives in [`_includes/project-card.html`](_includes/project-card.html), the page layout in [`_layouts/project.html`](_layouts/project.html), and the styles in [`_includes/head/custom.html`](_includes/head/custom.html).
 

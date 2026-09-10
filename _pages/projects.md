@@ -6,7 +6,7 @@ author_profile: true
 classes: wide
 ---
 
-A few things I've built that I'm proud of — each one with the problem, what I did, and what came out of it.
+Three projects, three angles on how I build: shipping a full-stack app end to end, running a research project with controlled experiments, and leading part of a seven-person C++ team. Each write-up covers the problem, the design decisions, the results with numbers, and what I would do differently.
 
 {% assign projects = site.projects | sort: "order" %}
 {% if projects.size == 0 %}
