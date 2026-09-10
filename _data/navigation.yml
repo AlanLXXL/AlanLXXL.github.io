@@ -1,6 +1,6 @@
 main:
-  - title: "Tutorials"
-    url: /tutorials/
+  - title: "Projects"
+    url: /projects/
   - title: "Posts"
     url: /posts/
   - title: "Categories"
@@ -9,3 +9,7 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+  # Tutorials was unlinked from the menu in Sept 2026 (content stale since May 2026).
+  # The section still builds at /tutorials/. To bring it back, restore this entry:
+  # - title: "Tutorials"
+  #   url: /tutorials/

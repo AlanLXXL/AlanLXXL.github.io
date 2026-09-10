@@ -115,6 +115,34 @@ If you ever move to a new Mac, walk through [`_tutorials/jekyll-local-preview.md
    ```
 3. The tutorial automatically appears at `/tutorials/`.
 
+> **Note (Sept 2026):** Tutorials is no longer linked from the top nav. The section still builds at `/tutorials/`; its menu entry is kept commented out in [`_data/navigation.yml`](_data/navigation.yml) if you want it back.
+
+### Add a new project
+
+Projects live in the `_projects/` collection. Each one gets its own page at `/projects/<slug>/`, a card on [`/projects/`](_pages/projects.md), and the top three (by `order`) also show on the homepage under "Selected projects".
+
+1. Copy [`_projects/TEMPLATE.md`](_projects/TEMPLATE.md) to `_projects/<slug>.md` — the slug becomes the URL.
+2. Fill in the front matter and **remove the `published: false` line**:
+   ```yaml
+   ---
+   title: "Project Name"
+   order: 1                          # 1 = shown first
+   period: "Jan – May 2026"
+   role: "ML engineer · team of 3"   # or "Solo project"
+   excerpt: "One sentence: what it does and why it matters."
+   result: "One concrete outcome, ideally with a number."
+   stack: [Python, PyTorch, FastAPI]
+   links:
+     - label: "GitHub"
+       url: "https://github.com/AlanLXXL/repo-name"
+   # image: /assets/images/projects/<slug>.png   # optional card thumbnail
+   ---
+   ```
+3. Write the body: Problem → What I built → Results → What I learned. Headings feed the sticky table of contents.
+4. Save → livereload picks it up. Cards sort by `order`, lowest first.
+
+The card markup lives in [`_includes/project-card.html`](_includes/project-card.html), the page layout in [`_layouts/project.html`](_layouts/project.html), and the styles in [`_includes/head/custom.html`](_includes/head/custom.html).
+
 ### Reorder the top nav
 
 Edit [`_data/navigation.yml`](_data/navigation.yml). Order of entries = order in the menu.
@@ -195,9 +223,10 @@ AlanLXXL.github.io/
 ├── _data/
 │   └── navigation.yml   ← top nav order
 ├── _includes/           ← reusable Liquid fragments (about-content.md, etc.)
-├── _pages/              ← standalone pages (about, archives)
+├── _pages/              ← standalone pages (about, projects listing, archives)
 ├── _posts/              ← blog posts, filename = YYYY-MM-DD-slug.md
-├── _tutorials/          ← tutorial collection, no date prefix
+├── _projects/           ← project write-ups (collection) — copy TEMPLATE.md to start one
+├── _tutorials/          ← tutorial collection, no date prefix (unlinked from nav, still builds)
 ├── assets/
 │   └── images/          ← all images go here
 ├── index.md             ← homepage (just renders the about content)

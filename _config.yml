@@ -40,6 +40,9 @@ collections:
   series:
     output: true
     permalink: /tutorials/series/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -65,7 +68,7 @@ plugins:
 author:
   name   : "Xing Lu"
   avatar : "/assets/images/xing-portrait.png"
-  bio    : "Xing Lu is a computer science student, passionate about machine learning, and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
+  bio    : "Xing Lu is an ECE Master's student at Carnegie Mellon University, passionate about machine learning and open source. He enjoys sharing his knowledge through blogging and contributing to the community."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -115,6 +118,18 @@ defaults:
       read_time: true
       comments: true
       share: true
+      toc: true
+      toc_sticky: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      author_profile: true
+      read_time: false
+      comments: false
+      share: false
       toc: true
       toc_sticky: true
   # _series

@@ -113,4 +113,82 @@
     letter-spacing: 0.05em;
   }
   .series-nav__link-title { font-size: 0.95em; }
+
+  /* Project cards on /projects/ and the homepage */
+  .project-card {
+    display: flex;
+    gap: 1.25em;
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #2f7fc1;
+    border-radius: 6px;
+    padding: 1.25em 1.5em;
+    margin-bottom: 1.5em;
+    background: #fafbfc;
+  }
+  .project-card__image { flex: 0 0 200px; }
+  .project-card__image img { display: block; width: 100%; height: auto; border-radius: 4px; }
+  .project-card__body { flex: 1 1 auto; min-width: 0; }
+  .project-card__eyebrow {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    color: #2f7fc1;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+  }
+  .project-card__title { margin: 0 0 0.4em 0; font-size: 1.35em; }
+  .project-card__title a { text-decoration: none; }
+  .project-card__title a:hover { text-decoration: underline; }
+  .project-card__excerpt { margin: 0.4em 0 0.6em 0; color: #4b5563; }
+  .project-card__result { margin: 0 0 0.6em 0; color: #111827; font-weight: 600; }
+  .project-card__stack { margin: 0 0 0.8em 0; line-height: 1.8; }
+  .project-card__tag {
+    display: inline-block;
+    font-size: 0.75em;
+    padding: 0.1em 0.65em;
+    margin: 0 0.4em 0 0;
+    border-radius: 999px;
+    background: #e8f1f9;
+    color: #1f5f93;
+    white-space: nowrap;
+  }
+  .project-card__links { margin: 0; }
+  .project-card__links .btn { margin: 0 0.4em 0.4em 0; }
+  @media (max-width: 600px) {
+    .project-card { flex-direction: column; }
+    .project-card__image { flex-basis: auto; }
+  }
+
+  /* Facts header at the top of a project page */
+  .project-facts {
+    border: 1px solid #e5e7eb;
+    border-left: 4px solid #2f7fc1;
+    border-radius: 6px;
+    padding: 1em 1.25em;
+    margin: 0 0 2em 0;
+    background: #fafbfc;
+    font-size: 0.95em;
+  }
+  .project-facts__list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.45em 1.25em;
+    align-items: baseline;
+    margin: 0;
+  }
+  /* The theme gives .page__content dt a top margin and shrinks dd text; reset both here. */
+  .page__content .project-facts__list dt,
+  .page__content .project-facts__list dd {
+    margin: 0;
+    font-size: inherit;
+    line-height: 1.5;
+  }
+  .page__content .project-facts__list dt { font-weight: 600; color: #374151; }
+  .page__content .project-facts__list dd { color: #4b5563; }
+  .project-facts__links { margin: 0.9em 0 0 0; }
+  .project-facts__links .btn { margin: 0 0.4em 0.4em 0; }
+  .project-back { margin-top: 2.5em; }
+
+  /* "Selected projects" teaser on the homepage */
+  .home-projects { margin-top: 2.5em; }
 </style>

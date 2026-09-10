@@ -1,0 +1,24 @@
+---
+layout: single
+---
+
+{%- assign pr = page -%}
+<div class="project-facts">
+  <dl class="project-facts__list">
+    {%- if pr.period %}<dt>When</dt><dd>{{ pr.period }}</dd>{% endif %}
+    {%- if pr.role %}<dt>Role</dt><dd>{{ pr.role }}</dd>{% endif %}
+    {%- if pr.stack %}<dt>Stack</dt><dd>{{ pr.stack | join: ", " }}</dd>{% endif %}
+    {%- if pr.result %}<dt>Result</dt><dd>{{ pr.result | markdownify | strip_html | strip }}</dd>{% endif %}
+  </dl>
+{%- if pr.links %}
+  <p class="project-facts__links">
+{%- for l in pr.links %}
+    <a class="btn btn--primary btn--small" href="{{ l.url }}"{% if l.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>
+{%- endfor %}
+  </p>
+{%- endif %}
+</div>
+
+{{ content }}
+
+<p class="project-back"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>

@@ -1,0 +1,33 @@
+{%- comment -%}
+Project card, used on /projects/ and the homepage.
+Usage: {% include project-card.html project=pr heading="h2" %}
+Reads from the project's front matter: title, period, role, excerpt, result,
+stack (list), links (list of {label, url}), image + image_alt (optional).
+{%- endcomment -%}
+{%- assign pr = include.project -%}
+{%- assign h = include.heading | default: "h2" -%}
+{%- assign pr_excerpt = pr.excerpt | markdownify | strip_html | strip -%}
+<article class="project-card">
+{%- if pr.image %}
+  <a class="project-card__image" href="{{ pr.url | relative_url }}"><img src="{{ pr.image | relative_url }}" alt="{{ pr.image_alt | default: pr.title }}"></a>
+{%- endif %}
+  <div class="project-card__body">
+    <div class="project-card__eyebrow">{% if pr.period %}{{ pr.period }}{% else %}Project{% endif %}{% if pr.role %} &middot; {{ pr.role }}{% endif %}</div>
+    <{{ h }} class="project-card__title"><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></{{ h }}>
+{%- if pr_excerpt != "" %}
+    <p class="project-card__excerpt">{{ pr_excerpt }}</p>
+{%- endif %}
+{%- if pr.result %}
+    <p class="project-card__result">{{ pr.result | markdownify | strip_html | strip }}</p>
+{%- endif %}
+{%- if pr.stack %}
+    <p class="project-card__stack">{% for s in pr.stack %}<span class="project-card__tag">{{ s }}</span>{% endfor %}</p>
+{%- endif %}
+    <p class="project-card__links">
+{%- for l in pr.links %}
+      <a class="btn btn--primary btn--small" href="{{ l.url }}"{% if l.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>
+{%- endfor %}
+      <a class="btn btn--inverse btn--small" href="{{ pr.url | relative_url }}">Read more</a>
+    </p>
+  </div>
+</article>
